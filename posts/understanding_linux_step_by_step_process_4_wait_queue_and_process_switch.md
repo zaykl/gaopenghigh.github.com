@@ -33,7 +33,7 @@ title: understanding_linux_step_by_step_process_4_wait_queue_and_process_switch
     /* schedule返回，完成后续清理工作 */
     finish_wait();
 
-等待队列由“等待队列头（·struct wait_queue_head_t·）”和“等待队列项（·struct wait_queue_t·）”组成。
+等待队列由“等待队列头（`struct wait_queue_head_t`）”和“等待队列项（`struct wait_queue_t`）”组成。
 
 schedule函数是内核的进程调度函数，当它被调用是，内核会按照一定的调度算法选择出下一个执行的进程，然后进行进程切换的操作。schedule返回后，说明这个进程醒来了（需要的条件成立了）并且被内核选中开始执行了。
 
@@ -76,7 +76,8 @@ schedule函数是内核的进程调度函数，当它被调用是，内核会按
 
 #### 等待队列头
 
-等待队列由双向链表实现，每一个等待队列都有一个等待队列头(wait queue head), 其类型是名为·wait_queue_head_t·的数据结构:
+等待队列由双向链表实现，每一个等待队列都有一个等待队列头(wait queue head), 其类型是名为`wait_queue_head_t`的数据结构:
+
     /* <linux/wait.h> */
     struct __wait_queue_head {
         spinlock_t lock;              /* 自旋锁 */
