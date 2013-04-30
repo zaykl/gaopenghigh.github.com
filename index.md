@@ -51,12 +51,12 @@ title: 做美好的人，做酷的事
 
 * [2012年个人总结](posts/personal_review_of_2012.html)
 * [google的黑镜子--思考技术元素对生活的影响](posts/black_mirror_of_google_technium_and_life.html)
+* [技术元素和幸福的生活 --《科技想要什么》读书笔记](posts/book_what_technology_wants.html)
 * [Linux vs Windows](posts/linux_vs_windows.html)
 * [爱情的All In](posts/all_in_for_love.html)
 * [渴望被听到](posts/require_to_be_followed.html)
 * [学会感恩](posts/learning_thanksgiving.html)
 * [亲历Facebook--《打造Facebook》读书笔记](posts/book_facebook.html)
-* [技术元素和幸福的生活 --《科技想要什么》读书笔记](posts/book_what_technology_wants.html)
 * [《Linux_Unix设计思想》读书笔记](posts/book_linux_unix_philosophy.html)
 
 ----
