@@ -6,7 +6,7 @@ title: understanding_linux_step_by_step_kernel_1_list
 <link rel='stylesheet' href='/style/github2.css'/>
 </head>
 
-双向链表的实现
+内核中双向链表的实现
 =============
 
 ## list_head数据结构
@@ -58,7 +58,7 @@ title: understanding_linux_step_by_step_kernel_1_list
     与`list_for_each`类似，只是返回的是链表元素的指针，也就是返回包含了地址为`p`且名称为`m`的`list_head`的元素的指针，而不是`list_head`结构本身的地址。
 
 
-## list_entry宏的实现
+## `list_entry宏`的实现
 
 作为一个例子，我们来看看`list_entry`宏是怎么实现的。下面的叙述中SRC表示Linux内核源码所在的目录。
 
@@ -73,7 +73,7 @@ title: understanding_linux_step_by_step_kernel_1_list
     #define list_entry(ptr, type, member) \
         container_of(ptr, type, member)
     
-这个container_of宏则在SRC/drivers/staging/rtl8192e/rtllib.h中定义:
+这个`container_of`宏则在SRC/drivers/staging/rtl8192e/rtllib.h中定义:
     
     #ifndef container_of
     /**
@@ -108,7 +108,7 @@ title: understanding_linux_step_by_step_kernel_1_list
     把之前赋值好的__mptr强制转换为char指针类型，这样可以和offsetof得到的偏移值做减法，由member的地址减去member相对于type的偏移值，得到的就是type的地址了。最后再把这个地址转换为type类型的指针。这样我们就得到了"container"的指针。 
 
 
-## offsetof宏的实现
+## `offsetof`宏的实现
 
 `offsetof`的宏定义在SRC/include/linux/stddef.h中:
 
