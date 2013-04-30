@@ -1,11 +1,11 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<link rel='stylesheet' href='/style/github2.css'/>
+</head>
+
 ---
 title: 做美好的人，做酷的事
 ---
-
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel='stylesheet' href='/style/github2.css'/>
-</head>
 
 做美好的人，做酷的事
 ==================
