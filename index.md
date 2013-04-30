@@ -45,7 +45,7 @@ title: 做美好的人，做酷的事
 * [shell脚本获取人名](posts/get_name_script.html)
 * [多机文件实时同步(利用rsync和inotify)](posts/inotifyrsync.html)
 * [Linux共享库学习笔记](posts/linux_ld.html)
-* [MySQL双向同步设置](mysql_duble_replicate.html)
+* [MySQL双向同步设置](posts/mysql_duble_replicate.html)
 
 ##### 随笔
 
