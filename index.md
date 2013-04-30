@@ -4,13 +4,10 @@ title: 做美好的人，做酷的事
 
 <link rel='stylesheet' href='../style/github2.css'/>
 
-# 关于我
+# 做美好的人，做酷的事
 
-高鹏/JH
+高鹏/JH | gaopenghigh@gmail.com | [@番茄小新JH](http://weibo.com/jh27)
 
-gaopenghigh@gmail.com
-
-做美好的人，做酷的事
 
 # 目录
 
@@ -19,6 +16,7 @@ gaopenghigh@gmail.com
 * [一步步理解Linux IO（1）](posts/understanding_linux_step_by_step_IO_1.html)
 * 
 
+----
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
