@@ -4,13 +4,12 @@ title: understanding_linux_step_by_step_IO_1
 
 <link rel='stylesheet' href='/style/github2.css'/>
 
-# 0. 一步步理解Linux IO（1）
+一步步理解Linux IO（1）
+=====================
 
-作者：Gao Peng<gaopenghigh@gmail.com>
-
-本文章由Gao Peng编写，转载请注明出处。
-
-原文地址：
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_IO_1.html)
 
 ------------------------------------------------
 
@@ -83,6 +82,7 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
     /* 成功返回0，失败返回-1 */
     void sync(void);            /* 刷所有脏的缓存 */
 
+----------------------
 
 # 2. Linux中的标准IO库
 
