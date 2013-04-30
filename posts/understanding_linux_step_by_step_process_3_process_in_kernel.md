@@ -76,7 +76,7 @@ task_stuct的示意图如下:
 
 ## 进程的标识和定位（PID散列表）
 
-我们知道进程通过PID来标识，PID有个默认的最大值，一般是32768，这个值在<linux/threads.h>中定义:
+我们知道进程通过PID来标识，PID有个默认的最大值，一般是32768，这个值在`<linux/threads.h>`中定义:
 
     #define PID_MAX_DEFAULT (CONFIG_BASE_SMALL ? 0x1000 : 0x8000)
 
