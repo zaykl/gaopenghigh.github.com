@@ -4,7 +4,7 @@ title: understanding_linux_step_by_step_IO_1
 
 <link rel='stylesheet' href='../style/github2.css'/>
 
-# 0. 说明
+# 0. 一步步理解Linux IO（1）
 
 作者：Gao Peng<gaopenghigh@gmail.com>
 
