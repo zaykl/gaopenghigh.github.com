@@ -3,8 +3,8 @@ title: 做美好的人，做酷的事
 ---
 
 <head>
-><meta charset='utf-8' />
-<link rel='stylesheet' href='../style/github2.css'/>
+<meta charset='utf-8' />
+<link rel='stylesheet' href='/style/github2.css'/>
 </head>
 
 做美好的人，做酷的事
