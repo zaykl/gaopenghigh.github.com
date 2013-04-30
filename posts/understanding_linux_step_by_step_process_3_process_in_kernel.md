@@ -262,7 +262,7 @@ Linux的`fork()`使用“**写时拷贝**”（copy-on-write）来实现，这�
 7. 调用`sched_fork()`函数，把子进程状态设置为`TASK_RUNNING`，并完成一些进程调度需要的初始化。
 8. 根据`clone_flags`做一些进程亲子关系的初始化，比如`clone_flags`中有`CLONE_PARENT|CLONE_THREA`D，则把子进程的`real_parent`的值等于父进程的`real_parent`的值。
 9. 根据flags对是否需要跟踪子进程做一些初始化；
-10. 执行`SET_LINKS()`宏把新进程描述符插入进程链表，`SET_LINKS`宏定义在<linux/sched.h>中。
+10. 执行`SET_LINKS()`宏把新进程描述符插入进程链表，`SET_LINKS`宏定义在`<linux/sched.h>`中。
 11. 判断子进程是否要被跟踪，做一些设置。
 12. 调用`attch_pid()`把新进程描述符插入到`pidhash[PIDTYPE_PID]`散列表。
 13. 做一些扫尾工作，修改一些计数器的值，并返回新进程的进程的进程描述符指针`tsk`。在`copy_process()`函数成功返回后，`do_fork()`函数将唤醒新创建的进程并投入运行。
