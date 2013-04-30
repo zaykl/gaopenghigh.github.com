@@ -2,6 +2,7 @@
 title: 做美好的人，做酷的事
 ---
 
+ <meta charset='utf-8' />
 <link rel='stylesheet' href='../style/github2.css'/>
 
 做美好的人，做酷的事
