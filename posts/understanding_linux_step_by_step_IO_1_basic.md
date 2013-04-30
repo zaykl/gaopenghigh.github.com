@@ -2,10 +2,10 @@
 title: understanding_linux_step_by_step_IO_1
 ---
 
-<link rel='stylesheet' href='/style/github2.css'/>
+<head><link rel='stylesheet' href='/style/github2.css'/></head>
 
-一步步理解Linux IO（1）
-=====================
+一步步理解Linux IO（1）--Linux的IO和标准IO库
+=========================================
 
 作者：[gaopenghigh](http://gaopenghigh.github.com)
 ，转载请注明出处。
@@ -13,7 +13,7 @@ title: understanding_linux_step_by_step_IO_1
 
 ------------------------------------------------
 
-# 1. Linux文件IO的常用函数
+# Linux文件IO的常用函数
 
 Linux中做文件IO最常用到的5个函数是：`open`, `close`, `read`, `write`和`lseek`，不是ISO C的组成部分，这5个函数是不带缓冲的IO，也即每个read和write都调用了内核的一个系统调用。另外，dup函数和sync函数也经常用到，下面我们大致看一下这7个函数。
 
@@ -84,9 +84,9 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
 
 ----------------------
 
-# 2. Linux中的标准IO库
+# Linux中的标准IO库
 
-## 2.1 缓冲
+## 缓冲
 
 标准IO库提供缓冲功能，包括：
 
@@ -98,7 +98,7 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
 
 可用`setbuf`和`setvbuf`函数设置缓冲类型已经缓冲区大小，使用fflush函数冲洗缓冲区。
 
-## 2.2 打开流
+## 打开流
 
 使用`fopen`, `freopen`, `fdopen`三个函数打开一个流，这三个函数都返回FILE类型的指针。
 
@@ -117,7 +117,7 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
 
 `type`参数指定操作类型，入读写，追加等等。
 
-## 2.3 关闭流
+## 关闭流
 
 `fclose`函数关闭一个流：
 
@@ -125,7 +125,7 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
     int flose(FILE *fp);
     /* 成功返回0，出错返回EOF */
 
-## 2.4 读和写流
+## 读和写流
 
 ### 每次一个字符的IO
 
@@ -163,7 +163,56 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
 
 ### 二进制IO
 
+    #include <stdio.h>
+    size_t fread(void *restrict ptr, size_t size, size_t nobj,
+                FILE *restrict fp);
+    size_t fwrite(const void *restrict ptr, size_t size, size_t nobj,
+                FILE *restrict fp);
+    /* 返回值：读或写的对象数 */
 
+### 定位流
+
+    #include <stdio.h>
+    long ftell(FILE *fp);
+    /* 成功则返回当前文件位置指示，出错返回-1L */
+
+    int fseek(FILE *fp, long offset, int whence);
+    /* 成功返回0， 出错返回非0 */
+
+    int fgetpos(FILE *restrict fp, fpos_t *restrict pos);
+    int fsetpos(FILE *fp, fpos_t *pos);
+    /* 成功返回0，出错返回非0 */
+
+### 格式化IO
+
+执行格式化输出的主要是4个`printf`函数：
+
+* `printf` 输出到标准输出
+* `fprintf` 输出到指定流
+* `sprintf` 输出到指定数组
+* `snprintf` 输出到指定数组并在数组的尾端自动添加一个null字节
+
+格式化输入主要是三个`scanf`函数：
+
+* `scanf` 从标准输入获取
+* `fscanf` 从指定流获取
+* `sscanf` 从指定数组获取
+
+----
+
+# 高级IO
+
+
+
+JH, 2013-05-01
+
+----
+
+参考资料：
+
+* 《Unix环境高级编程》
+* 《深入理解Linux内核》
+* 《Linux内核设计与实现》
 
 ----
 
