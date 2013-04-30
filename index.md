@@ -48,7 +48,7 @@ title: 做美好的人，做酷的事
 * [MySQL双向同步设置](mysql_duble_replicate.html)
 
 ##### 随笔
-* [2011年个人总结](posts/personal_review_of_2011.html)
+
 * [2012年个人总结](posts/personal_review_of_2012.html)
 * [google的黑镜子--思考技术元素对生活的影响](posts/black_mirror_of_google_technium_and_life.html)
 * [Linux vs Windows](posts/linux_vs_windows.html)
