@@ -189,3 +189,4 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
   ga('send', 'pageview');
 
 </script>
+

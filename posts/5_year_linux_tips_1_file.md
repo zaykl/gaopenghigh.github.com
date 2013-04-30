@@ -18,10 +18,10 @@ title: 5_year_linux_tips_1_file
 * `lsattr` : 列出文件的隐藏属性
 * `chattr` : 修改文件的隐藏属性
 
-    [root@www ~]# chattr [+-=][ASacdistu] FileName
-    + : Add one attribute
-    - : Remove one attribute
-    = : Set to be the only attributes that the files have
+        [root@www ~]# chattr [+-=][ASacdistu] FileName
+        + : Add one attribute
+        - : Remove one attribute
+        = : Set to be the only attributes that the files have
 
 重要选项
 
@@ -157,4 +157,3 @@ JH, 2013-03-06
   ga('send', 'pageview');
 
 </script>
-
