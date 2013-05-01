@@ -4,6 +4,7 @@ title: require_to_be_followed
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 渴望被听到

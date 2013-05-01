@@ -4,6 +4,7 @@ title: linux_ld
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 Linux共享库学习笔记 

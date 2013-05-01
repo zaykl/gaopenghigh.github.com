@@ -1,7 +1,11 @@
 ---
 title: inotifyrsync
 ---
-<head><link rel='stylesheet' href='/style/github2.css'/></head>
+
+<head>
+<link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 inotifyrsync -- 用inotify和rsync实现多机实时同步
 =============================================

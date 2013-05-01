@@ -4,6 +4,7 @@ title: book_linux_unix_philosophy
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 《Linux/Unix设计思想》读书笔记

@@ -4,6 +4,7 @@ title: book_facebook
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 亲历Facebook--《打造Facebook》读书笔记

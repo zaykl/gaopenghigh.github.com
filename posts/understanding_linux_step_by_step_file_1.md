@@ -4,6 +4,7 @@ title: understanding_linux_step_by_step_file_1
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 一步步理解Linux文件（1）--文件的基本概念

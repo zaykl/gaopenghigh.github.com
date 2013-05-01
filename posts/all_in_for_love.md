@@ -4,6 +4,7 @@ title: all_in_for_love
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 爱情的All in

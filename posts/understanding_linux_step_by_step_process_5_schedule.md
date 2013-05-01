@@ -4,6 +4,7 @@ title: understanding_linux_step_by_step_process_5_schedule
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 一步步理解Linux进程（5）--进程调度

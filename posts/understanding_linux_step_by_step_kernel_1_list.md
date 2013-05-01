@@ -4,6 +4,7 @@ title: understanding_linux_step_by_step_kernel_1_list
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 内核中双向链表的实现

@@ -2,7 +2,10 @@
 title: get_name_script
 ---
 
-<head><link rel='stylesheet' href='/style/github2.css'/></head>
+<head>
+<link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 一个小脚本从小说中过滤出经常出现的人名(花名获取利器)！
 ===================================

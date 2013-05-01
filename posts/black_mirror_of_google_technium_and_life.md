@@ -4,6 +4,7 @@ title: black_mirror_of_google_technium_and_life
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 思考技术元素对生活的影响

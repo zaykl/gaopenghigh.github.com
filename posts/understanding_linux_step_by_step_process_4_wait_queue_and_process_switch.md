@@ -4,6 +4,7 @@ title: understanding_linux_step_by_step_process_4_wait_queue_and_process_switch
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 一步步理解Linux进程（4）--等待队列和进程切换

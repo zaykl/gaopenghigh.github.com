@@ -4,6 +4,7 @@ title: mysql_duble_replicate
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 MySQL双向同步热备设置以及同步错误的处理

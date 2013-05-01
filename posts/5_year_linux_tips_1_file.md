@@ -2,7 +2,9 @@
 title: 5_year_linux_tips_1_file
 ---
 
-<head><link rel='stylesheet' href='/style/github2.css'/></head>
+<head><link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 五年Linux使用技巧(1)--文件的属性
 ===============================

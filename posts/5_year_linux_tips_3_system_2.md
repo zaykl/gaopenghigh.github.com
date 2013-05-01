@@ -1,7 +1,10 @@
 ---
 title: 5_year_linux_tips_3_system_2
 ---
-<head><link rel='stylesheet' href='/style/github2.css'/></head>
+<head>
+<link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 五年Linux使用技巧(3)--系统（下）
 ===============================

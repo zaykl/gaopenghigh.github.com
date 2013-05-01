@@ -2,7 +2,10 @@
 title: python_list_sort
 ---
 
-<head><link rel='stylesheet' href='/style/github2.css'/></head>
+<head>
+<link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 python列表排序
 =============

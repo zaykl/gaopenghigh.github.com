@@ -4,6 +4,7 @@ title: book_what_technology_wants
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 读书笔记--《科技想要什么》
