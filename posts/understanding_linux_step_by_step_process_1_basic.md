@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_process_1_basic
 一步步理解Linux进程（1）--进程基础知识
 ==================================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_process_1_basic.html)
+
 ## 基本概念
 
 ### 进程

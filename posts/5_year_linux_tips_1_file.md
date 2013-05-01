@@ -9,6 +9,10 @@ title: 5_year_linux_tips_1_file
 五年Linux使用技巧(1)--文件的属性
 ===============================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/5_year_linux_tips_1_file.html)
+
 本文主要介绍了文件的隐藏属性和特殊权限，一个让脚本具有类似SUID位的技巧，还有一个解决mp3文件乱码的方法。
 从最开始接触Linux到现在已经有5年了，和所有人一样，少不了折腾。折腾后偶尔我会把方法记录下来，现在简单总结一下。
 所以的命令功能通过man都能找到具体用法，我只把自己觉得常用的列举出来。

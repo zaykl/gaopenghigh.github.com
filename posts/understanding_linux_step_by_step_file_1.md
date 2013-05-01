@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_file_1
 一步步理解Linux文件（1）--文件的基本概念
 ====================================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_file_1.html)
+
 ## 文件描述符
 
 Linux把一切都看做文件，设备、管道、socket都可以看做文件，可以通过一个文件描述符来引用，对它们可以调用read()和write()等系统调用。文件描述符一般是一个正非负整数，一般情况下，文件描述符0，1，2分别代表标准输入、标准输出和标准出错。

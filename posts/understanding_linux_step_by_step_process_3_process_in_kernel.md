@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_process_3_process_in_kernel
 一步步理解Linux进程（3）--内核中进程的实现
 ======================================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_process_3_process_in_kernel.html)
+
 ## 进程描述符（process descriptor）
 
 内核中，进程的所有信息存放在一个叫做“**进程描述符**”（process descriptor）的struct中，结构名叫做`task_struct`，该结构定义在`<linux/sched.h>`文件中。内核又把所有进程描述符放在一个叫做“任务队列（task list）的双向循环列表中。关于双向循环列表的实现，参见[《内核中双向列表的实现》](http://blog.csdn.net/gaopenghigh/article/details/8830293)。

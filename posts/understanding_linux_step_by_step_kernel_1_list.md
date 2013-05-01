@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_kernel_1_list
 内核中双向链表的实现
 =============
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_kernel_1_list.html)
+
 ## list_head数据结构
 
 为了理解内核中双向链表的实现，我们先来了解一下list_head数据结构：

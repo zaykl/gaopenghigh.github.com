@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_process_2_process_programming
 一步步理解Linux进程（2）--进程编程
 ===============================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_process_2_process_programming.html)
+
 ## 获取各种ID
 
 在“[一步步理解Linux进程（1）--基础知识](http://gaopenghigh.github.com/posts/understanding_linux_step_by_step_process_1_basic.html)”

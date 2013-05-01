@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_process_4_wait_queue_and_process_switch
 一步步理解Linux进程（4）--等待队列和进程切换
 =======================================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_process_4_wait_queue_and_process_switch.html)
+
 ## 等待队列
 
 假如一个进程去读一个磁盘上的文件，但是这个磁盘反应比较慢（相对于CPU来说），这是进程不能马上读取到数据，于是被阻塞了。此时内核一般会把这个进程的状态设置为睡眠`TASK_INTERRUPTIBLE`或者`TASK_UNINTERRUPTIBLE`，然后把这个进程放入等待队列里面，直到数据读取出来了才再次运行。

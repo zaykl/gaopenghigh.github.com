@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_kernel_2_hash
 内核中hash函数的实现
 ==================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_kernel_2_hash.html)
+
 Linux内核中通过PID查找进程描述符`task_struct`时，用到了hash表。
 下面介绍一下这一部分内核中hash函数的实现。
 

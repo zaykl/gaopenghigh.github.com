@@ -9,6 +9,10 @@ title: understanding_linux_step_by_step_process_5_schedule
 一步步理解Linux进程（5）--进程调度
 ===============================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_process_5_schedule.html)
+
 ## 什么是进程调度
 
 Linux是多任务系统，系统中需要运行很很多进程，而CPU就那么几个，于是内核就把CPU资源分配给这些进程，让它们都能运行一小会，然后又让位给其他进程运行。当遇到阻塞，比如从硬盘读取某个文件时，也会把CPU资源让给其它进程使用。 把CPU资源分配给进程，就叫做进程调度。

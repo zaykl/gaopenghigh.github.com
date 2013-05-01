@@ -8,6 +8,10 @@ title: 5_year_linux_tips_3_system_2
 五年Linux使用技巧(3)--系统（下）
 ===============================
 
+作者：[gaopenghigh](http://gaopenghigh.github.com)
+，转载请注明出处。
+[（原文地址）](http://gaopenghigh.github.io/posts/5_year_linux_tips_2_system_2.html)
+
 本文主要介绍了Linux系统方面的一些技巧。
 从最开始接触Linux到现在已经有5年了，和所有人一样，少不了折腾。折腾后偶尔我会把方法记录下来，现在简单总结一下。
 所以的命令功能通过man都能找到具体用法，我只把自己觉得常用的列举出来。
