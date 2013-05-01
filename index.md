@@ -4,9 +4,8 @@ title: 做美好的人，做酷的事
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
-<link href="/style/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
-<script type="text/javascript" src="/style/google-code-prettify/prettify.js"></script>
 </head>
+<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
 做美好的人，做酷的事
 ==================
