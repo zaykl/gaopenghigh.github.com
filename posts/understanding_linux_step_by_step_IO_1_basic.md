@@ -2,7 +2,10 @@
 title: understanding_linux_step_by_step_IO_1
 ---
 
-<head><link rel='stylesheet' href='/style/github2.css'/></head>
+<head>
+<link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
 
 一步步理解Linux IO（1）--Linux的IO和标准IO库
 =========================================
