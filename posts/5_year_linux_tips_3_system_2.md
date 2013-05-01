@@ -1,11 +1,7 @@
 ---
 title: 5_year_linux_tips_3_system_2
 ---
-<head>
-<link rel='stylesheet' href='/style/github2.css'/>
-<link href="/style/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
-</head>
-<script type="text/javascript" src="/style/google-code-prettify/prettify.js"></script>
+<head><link rel='stylesheet' href='/style/github2.css'/></head>
 
 五年Linux使用技巧(3)--系统（下）
 ===============================

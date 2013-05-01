@@ -2,11 +2,7 @@
 title: get_name_script
 ---
 
-<head>
-<link rel='stylesheet' href='/style/github2.css'/>
-<link href="/style/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
-</head>
-<script type="text/javascript" src="/style/google-code-prettify/prettify.js"></script>
+<head><link rel='stylesheet' href='/style/github2.css'/></head>
 
 一个小脚本从小说中过滤出经常出现的人名(花名获取利器)！
 ===================================
