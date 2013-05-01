@@ -5,7 +5,7 @@ title: 做美好的人，做酷的事
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
 </head>
-<script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+<script type="text/javascript" src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
 
 做美好的人，做酷的事
 ==================
