@@ -9,7 +9,7 @@ title: understanding_linux_step_by_step_IO_1
 
 作者：[gaopenghigh](http://gaopenghigh.github.com)
 ，转载请注明出处。
-[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_IO_1.html)
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_IO_1_basic.html)
 
 ------------------------------------------------
 
@@ -197,12 +197,6 @@ write函数向打开的文件写入数据，数据由buf指向的空间提供，
 * `scanf` 从标准输入获取
 * `fscanf` 从指定流获取
 * `sscanf` 从指定数组获取
-
-----
-
-# 高级IO
-
-
 
 JH, 2013-05-01
 

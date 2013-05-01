@@ -4,6 +4,7 @@ title: 做美好的人，做酷的事
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
 做美好的人，做酷的事
@@ -17,6 +18,7 @@ title: 做美好的人，做酷的事
 
 ##### 一步步理解Linux系列
 
+* [一步步理解Linux之IO（1）--高级IO](posts/understanding_linux_step_by_step_IO_1_advanced.html)
 * [一步步理解Linux之IO（1）--Linux的IO和标准IO库](posts/understanding_linux_step_by_step_IO_1_basic.html)
 * [一步步理解Linux之文件（1）](posts/understanding_linux_step_by_step_file_1.html)
 * [一步步理解Linux之进程（1）--进程基础知识](posts/understanding_linux_step_by_step_process_1_basic.html)
