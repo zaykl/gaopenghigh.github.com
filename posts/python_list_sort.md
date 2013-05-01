@@ -4,7 +4,9 @@ title: python_list_sort
 
 <head>
 <link rel='stylesheet' href='/style/github2.css'/>
+<link href="/style/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
 </head>
+<script type="text/javascript" src="/style/google-code-prettify/prettify.js"></script>
 
 python列表排序
 =============
