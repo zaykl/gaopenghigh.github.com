@@ -124,6 +124,39 @@ stable表示最终的顺序依赖于原来的顺序。
 更多关于sort的技巧，可以参考
 [《Sort Files Like A Master With The Linux Sort Command (Bash)》](http://www.skorks.com/2010/05/sort-files-like-a-master-with-the-linux-sort-command-bash/)
 
+### man的使用
+
+man page可能有好几个section，比如这个：
+
+    $ man -aw man
+    /usr/share/man/man1/man.1.gz
+    /usr/share/man/man7/man.7.gz
+
+就有2个section。在man page中也经常看到类似于：
+
+    SEE ALSO
+       epoll_create(2), epoll_create1(2), epoll_ctl(2), epoll_wait(2)
+
+括号里面的数字就是指section。不同的section代表不同类别的内容：
+
+    MANUAL SECTIONS
+    The standard sections of the manual include:
+
+    1      User Commands
+    2      System Calls
+    3      C Library Functions
+    4      Devices and Special Files
+    5      File Formats and Conventions
+    6      Games et. Al.
+    7      Miscellanea
+    8      System Administration tools and Deamons
+
+    Distributions customize the manual section to their specifics,
+    which often include additional sections.
+
+查看第7个section：
+
+    man 7 man
 
 ----
 

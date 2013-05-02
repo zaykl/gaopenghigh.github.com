@@ -35,11 +35,11 @@ title: 5_year_linux_tips_5_bash
 
 ### 逐行处理文件的最易懂且高效的方法：
 
-    while read $LINE
+    while read LINE
     do
          echo "$LINE" >> $OUTFILE
-         :
-    done
+         # do something
+    done < $INPUTFILE
 
 ### 得到一个变量代表的字符串的长度:
 
