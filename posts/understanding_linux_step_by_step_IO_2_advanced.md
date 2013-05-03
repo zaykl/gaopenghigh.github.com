@@ -1,5 +1,5 @@
 ---
-title: understanding_linux_step_by_step_IO_1_advanced
+title: understanding_linux_step_by_step_IO_2_advanced
 ---
 
 <head>
@@ -349,6 +349,80 @@ fork时子进程继承父进程的映射存储区。
 
 需要注意的是，`munmap`函数不会自动把映射区的内容写到磁盘文件上。
 
-### mmap和read/write的区别
+### `sendfile`函数
 
-（未完待续）
+`sendfile`函数用来在两个文件描述符之间传递数据。
+
+    #include <sys.sendfile.h>
+    int sendfile(int out_fd, int in_fd, off_t *offset, size_t count);
+    /* 成功时返回写到out_fd的数据的字节数，出错时返回-1并设置errno */
+
+参数解释如下：
+
+* `out_fd` 数据将要写入的那个文件描述符
+* `in_fd` 数据从这个描述符取出，必须是一个真实存在的文件，或者是能够mmap的设备
+* `offset` 从文件的哪里开始传输
+* `count` 要传输的字节数
+
+对于像web服务器这样的应用，经常需要把某个文件的内容传输到客户端，也就是写到与客
+户端通信的socket上，基本的操作类似于这样：
+
+    open source (disk file)
+    open destination (network connection)
+    while there is data to be transferred:
+        read data from source to a buffer
+        write data from buffer to destination
+    close source and destination
+
+数据的读取和写入需要调用read和write系统调用。
+在一个read系统调用中，数据的传输主要经过了如下几个路径：
+
+    从硬盘中取出数据 --传输到--> 内核缓冲区 --复制到--> 程序的缓冲区
+
+而在write系统调用中中，数据传输的路径则是：
+
+    程序的缓冲区 --复制到--> 内核缓冲区 --传输到--> 文件或设备（比如网卡）
+
+进程每次使用系统调用，都会出现一次在用户态和内核态的上下文切换，大量的系统调用
+消耗的资源是非常可观的。为了处理这种情况，`sendfile`出现了，使用`sendfile`时，
+数据传输的路径是：
+
+    从硬盘中取出数据 --传输到--> 内核缓冲区 --传输到--> 文件或设备（比如网卡）
+
+省去了数据在内核空间和用户空间的两次传输。
+
+
+
+----
+
+参考资料：
+
+* [UNIX环境高级编程](http://book.douban.com/subject/1788421/)
+* [Exploring The sendfile System Call](http://linuxgazette.net/issue91/tranter.html)
+* Man pages
+
+----
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'gaopenghigh'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-40539766-1', 'github.com');
+  ga('send', 'pageview');
+
+</script>
+
