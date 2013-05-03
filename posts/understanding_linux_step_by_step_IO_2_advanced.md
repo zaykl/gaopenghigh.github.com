@@ -7,7 +7,7 @@ title: understanding_linux_step_by_step_IO_2_advanced
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
 
-一步步理解Linux IO（1）--高级IO
+一步步理解Linux IO（2）--高级IO
 =========================================
 
 作者：[gaopenghigh](http://gaopenghigh.github.com)
