@@ -10,8 +10,8 @@ title: 做美好的人，做酷的事
 做美好的人，做酷的事
 ==================
 
-[高鹏/JH](http://gaopenghigh.github.com) | 
-<gaopenghigh@gmail.com> | 
+[高鹏/JH](http://gaopenghigh.github.com) |
+<gaopenghigh@gmail.com> |
 [@番茄小新JH](http://weibo.com/jh27)
 
 ### 目录

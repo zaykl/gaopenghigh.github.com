@@ -69,7 +69,7 @@ title: understanding_linux_step_by_step_IO_1_advanced
 `fd_set`结构是“描述符集”，它相当于一个数组，为每一个可能的描述符保持了一位，最
 大的位数可以设置。
 
-`maxfdp1`表示“最大描述符加1”，即在三个fd_set中有效的最大描述符加上1的值，这样
+`maxfdp1`表示“最大描述符加1”，即在三个`fd_set`中有效的最大描述符加上1的值，这样
 内核只需要关心三个`fd_set`中的小于`maxfdp1`的那些描述符了。
 
 ### `poll`函数
@@ -140,7 +140,7 @@ This specifies a limit on the total number of file descriptors that a user can
 register across all epoll instances on the system.  The limit is per real user 
 ID.  Each registered file descriptor costs roughly 90 bytes on a 32-bit kernel,
 and roughly 160 bytes on a 64-bit kernel.  Currently, the default value for 
-max_user_watches is 1/25 (4%) of the available low memory, divided by the 
+`max_user_watches` is 1/25 (4%) of the available low memory, divided by the 
 registration cost in bytes.
 
 #### `epoll_create`
