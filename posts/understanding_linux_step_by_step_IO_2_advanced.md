@@ -280,11 +280,22 @@ listener 是一个飞阻塞的socket，通过listen系统调用在这个socket�
 ## readv和writev函数
 
 readv和writev函数用于在一次函数调用中读、写多个非连续缓冲区。有时也将这两个函数
-成为**散布读（scatter read）**和**聚集写（gather write）**。
+成为**散布读（scatter read）**和**聚集写（gather write）**。如果使用read或者
+write，完成同样的功能需要多次的系统调用。现在用readv和writev主要调用一次就OK。
 
     #include <sys/uio.h>
     ssize_t readv(int filedes, const struct iovec *iov, int iovcnt);
     ssize_t writev(int filedes, const struct iovec *iov, int iovcnt);
     /* 成功时返回已读、写的字节数，出错返回-1 */
+
+这两个文件的第二个参数是指向iovec结构数组的指针，该结构表示一个缓冲区：
+
+    struct iovec {
+        void *iov_base;    /* starting address of bufffer */
+        size_t iov_len;    /* size of buffer */
+    };
+
+
+## 存储映射IO
 
 
