@@ -131,16 +131,18 @@ epoll的默认触发方式就是“水平触发”。
 
 #### /proc 接口
 
-epoll支持的最大文件描述符数并非没有限制。The following interfaces can be used 
-to limit the amount of kernel memory consumed by epoll:
+epoll支持的最大文件描述符数并非没有限制。以下出自epoll的man手册。
+
+The following interfaces can be used to limit the amount of kernel memory
+consumed by epoll:
 
     /proc/sys/fs/epoll/max_user_watches (since Linux 2.6.28)
 
-This specifies a limit on the total number of file descriptors that a user can 
-register across all epoll instances on the system.  The limit is per real user 
+This specifies a limit on the total number of file descriptors that a user can
+register across all epoll instances on the system.  The limit is per real user
 ID.  Each registered file descriptor costs roughly 90 bytes on a 32-bit kernel,
-and roughly 160 bytes on a 64-bit kernel.  Currently, the default value for 
-`max_user_watches` is 1/25 (4%) of the available low memory, divided by the 
+and roughly 160 bytes on a 64-bit kernel.  Currently, the default value for
+`max_user_watches` is 1/25 (4%) of the available low memory, divided by the
 registration cost in bytes.
 
 #### `epoll_create`
@@ -166,8 +168,14 @@ registration cost in bytes.
     int epoll_ctl(int epfd, int op, int fd, struct epoll_event *event);
     /* 成功时返回0，出错返回-1并设置errno */
 
-它控制由epfd关联的epoll实例，op代表想要的操作，这些操作会作用在目标文件描述符fd
-上。
+它控制由epfd关联的epoll实例，op代表想要的操作，这些操作会作用在目标fd上。
+上。op可能的值是：
+
+    EPOLL_CTL_ADD    注册操作
+    EPOLL_CTL_MOD    修改操作
+    EPOLL_CTL_DEL    删除操作
+
+`event`表示我们在`fd`上关心的IO类型
 
     typedef union epoll_data {
         void        *ptr;
@@ -193,4 +201,90 @@ registration cost in bytes.
     EPOLLONESHOT 设置one-shot模式
 
 #### `epoll_wait`
+
+`epoll_wait`等待在一个epoll文件描述符上的IO事件。
+
+    #include <sys/epoll.h>
+    int epoll_wait(int epfd, struct epoll_event *events,
+                   int maxevents, int timeout);
+    /* 成功时返回可以IO的文件描述符数量，出错返回-1并设置errno */
+
+* `epfd`表示我们关心的epoll实例。
+* `events`是`struct epoll_event`类型的指针，它指向的数组存放准备好了的事件。
+* `maxevents`只我们想要接受的最大事件的数目。可以设置为`struct epoll_event`数组
+    `events`的长度。
+* `timeout`表示超时时间，单位是ms。0表示不阻塞，-1表示永远阻塞。
+
+#### epoll的使用
+
+下面我们通过man手册中给出的标准示例看看epoll的用法。
+
+listener 是一个飞阻塞的socket，通过listen系统调用在这个socket上进行请求的接收。
+`do_use_fd()`函数使用已经准备好IO的文件描述符，read或者write，直到遇到`EAGAIN`
+，然后记录它自己的状态，这样在下一次调用`do_use_fd()`时它能够从之前停止的的地方
+继续read或write。
+
+    #define MAX_EVENTS 10
+    struct epoll_event ev, events[MAX_EVENTS];
+    int listen_sock, conn_sock, nfds, epollfd;
+
+    /* Set up listening socket, 'listen_sock' (socket(),
+       bind(), listen()) */
+
+    epollfd = epoll_create(10);    /* 这里的10事实上被忽略的 */
+    if (epollfd == -1) {
+        perror("epoll_create");
+        exit(EXIT_FAILURE);
+    }
+
+    ev.events = EPOLLIN;          /* 对于listen_sock，我们关系它是否可读 */
+    ev.data.fd = listen_sock;
+    /* 在epollfd关联的epoll实例上注册listen_sock */
+    if (epoll_ctl(epollfd, EPOLL_CTL_ADD, listen_sock, &ev) == -1) {
+        perror("epoll_ctl: listen_sock");
+        exit(EXIT_FAILURE);
+    }
+
+    for (;;) {
+        nfds = epoll_wait(epollfd, events, MAX_EVENTS, -1);
+        if (nfds == -1) {
+            perror("epoll_pwait");
+            exit(EXIT_FAILURE);
+        }
+
+        for (n = 0; n < nfds; ++n) {
+            if (events[n].data.fd == listen_sock) {
+                /* 检测到请求，建立新的socket来处理请求 */
+                conn_sock = accept(listen_sock,
+                                (struct sockaddr *) &local, &addrlen);
+                if (conn_sock == -1) {
+                    perror("accept");
+                    exit(EXIT_FAILURE);
+                }
+                setnonblocking(conn_sock);
+                ev.events = EPOLLIN | EPOLLET;
+                ev.data.fd = conn_sock;
+                /* 把新的socket注册到epollfd代表的epoll实例上 */
+                if (epoll_ctl(epollfd, EPOLL_CTL_ADD, conn_sock,
+                            &ev) == -1) {
+                    perror("epoll_ctl: conn_sock");
+                    exit(EXIT_FAILURE);
+                }
+            } else {
+                do_use_fd(events[n].data.fd);
+            }
+        }
+    }
+
+
+## readv和writev函数
+
+readv和writev函数用于在一次函数调用中读、写多个非连续缓冲区。有时也将这两个函数
+成为**散布读（scatter read）**和**聚集写（gather write）**。
+
+    #include <sys/uio.h>
+    ssize_t readv(int filedes, const struct iovec *iov, int iovcnt);
+    ssize_t writev(int filedes, const struct iovec *iov, int iovcnt);
+    /* 成功时返回已读、写的字节数，出错返回-1 */
+
 
