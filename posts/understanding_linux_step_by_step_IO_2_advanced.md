@@ -298,4 +298,57 @@ write，完成同样的功能需要多次的系统调用。现在用readv和writ
 
 ## 存储映射IO
 
+### 创建映射存储区
 
+**存储映射IO（Memory-mapped IO）**使一个磁盘文件与存储空间中的一个缓冲区映射。
+操作缓冲区就相当于操作磁盘上的文件。`mmap`函数实现这个功能。
+
+    #include <sys/mman.h>
+    void *mmap(void *addr, size_t len, int prot, int flag, int filedes,
+               off_t off);
+    /* 若成功则返回映射区的起始地址，若出错则返回MAP_FAILED */
+
+* `addr` 参数表示映射区的起始地址。通常设为0，表示由系统选择该映射区的起始地址
+* `len` 表示映射的字节数
+* `off` 表示要映射字节在文件中的起始偏移量
+* `prot` 表示对映射存储区的保护要求，其值可以下面这些值的任意组合：
+* `fileds` 表示要被映射的文件的描述符
+        PROT_HEAD     映射区可读
+        PROT_WRITE    映射区可写
+        PROT_EXEC     映射区可执行
+        PROT_NONE     映射区不可访问
+* `flag` 参数影响映射区的多种属性：
+        MAP_FIXED     返回值必须等于addr，但一般把addr设为0
+        MAP_SHARED    对存储区的操作相当于对文件write
+        MAP_PRIVATE   对存储区的操作不会产生对文件的write
+    其中，`MAP_SHARED`和`MAP_PRIVATE`两个参数必须选一个。
+
+与映射存储区相关的有两个信号：
+
+* `SIGSEGV` 试图访问对它不可用的存储区，或企图写数据到只读的存储区时产生该信号
+* `SIGBUS` 访问映射区的某个部分，而在访问时这一部分实际上已经不存在时产生该信号
+
+fork时子进程继承父进程的映射存储区。
+
+### `mprotect`，`fsync`和`munmap`函数
+
+使用`mprotect`函数可以修改映射存储区的权限：
+
+    #include <sys/mman.h>
+    int mprotect(void *addr, size_t len, int prot);
+
+使用`fsync`函数可以冲洗映射存储区的数据到被映射的文件中：
+
+    #include <sys/mman.h>
+    int msync(void *addr, size_t len, int flags);
+
+当进程终结或者调用了`munmap`函数时，映射存储区就被解除映射：
+
+    #include <sys/mman.h>
+    int munmap(caddr_t addr, size_t len);
+
+需要注意的是，`munmap`函数不会自动把映射区的内容写到磁盘文件上。
+
+### mmap和read/write的区别
+
+（未完待续）
