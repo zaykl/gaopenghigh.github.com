@@ -99,6 +99,6 @@ Linux中中断处理程序是无须重入的。当一条中断线上的handler�
 `dev`来说明想要注销的是哪一个handler。
 
 
-# 下半部（buttom half）
+# 下半部（bottom half）
 
 
