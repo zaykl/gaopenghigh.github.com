@@ -12,7 +12,7 @@ title: understanding_linux_step_by_step_IO_2_advanced
 
 作者：[gaopenghigh](http://gaopenghigh.github.com)
 ，转载请注明出处。
-[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_IO_1_advanced.html)
+[（原文地址）](http://gaopenghigh.github.io/posts/understanding_linux_step_by_step_IO_2_advanced.html)
 
 ------------------------------------------------
 
