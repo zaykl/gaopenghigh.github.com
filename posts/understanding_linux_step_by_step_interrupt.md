@@ -60,7 +60,7 @@ Linux中中断处理程序是无须重入的。当一条中断线上的handler�
 ## 注册中断处理程序
 
 驱动程序通过`request_irq()`函数注册一个中断处理程序：
-
+```C
     /* 定义在<linux/interrupt.h>中 */
     typedef irqreturn_t (*irq_handler_t)(int, void *);
 
@@ -69,12 +69,14 @@ Linux中中断处理程序是无须重入的。当一条中断线上的handler�
                     unsigned long flags,
                     const char *name,
                     void *dev);
+```
 
 参数解释如下：
 
 * `irq` 要分配的中断号
 * `handler` 是指向中断处理程序的指针
 * `flags` 设置中断处理程序的一些属性，可能的值如下：
+
     - `IRQF_DISABLED` 在本次中断处理程序本身期间，禁止所有其他中断。
     - `IRQF_SAMPLE_RANDOM` 这个中断对内核的随机数产生源有贡献。
     - `IRQF_TIMER` 该标志是特别为系统定时器的中断处理准备的。
