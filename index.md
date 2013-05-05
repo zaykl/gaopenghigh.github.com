@@ -29,7 +29,6 @@ title: 做美好的人，做酷的事
 * [一步步理解Linux之进程（5）--进程调度](posts/understanding_linux_step_by_step_process_5_schedule.html)
 * [一步步理解Linux之内核（1）--双向链表的实现](posts/understanding_linux_step_by_step_kernel_1_list.html)
 * [一步步理解Linux之内核（2）--hash函数的实现](posts/understanding_linux_step_by_step_kernel_2_hash.html)
-* [一步步理解Linux之系统调用](posts/understanding_linux_step_by_step_system_call.html)
 
 ##### 五年Linux使用接技巧系列
 
