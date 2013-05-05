@@ -42,10 +42,8 @@ title: understanding_linux_step_by_step_interrupt
 
 异常处理一般由三个部分组成：
 
-1.  在内核堆栈中保存大多数寄存器的内容。（汇编）
-
+1.  在内核堆栈中保存大多数寄存器的内容（汇编）。
 2.  用高级的C函数处理异常。
-
 3.  通过`ret_from_exception()`函数从异常处理程序退出。
 
 
