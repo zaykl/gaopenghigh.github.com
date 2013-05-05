@@ -56,6 +56,11 @@ title: understanding_linux_step_by_step_interrupt
 3.  执行共享这个IRQ的所有设备的中断服务例程（ISR）。
 4.  跳到`ret_from_intr()`的地址。
 
+中断处理的示意图如下：
+
+![](pictures/understanding_linux_step_by_step_interrupt_interrupt_handling.png)
+
+
 ### 中断处理程序
 
 在相应一个特定中断时，内核会执行一个函数，这个函数就叫做
