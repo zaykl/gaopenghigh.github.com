@@ -42,7 +42,6 @@ title: understanding_linux_step_by_step_interrupt
 
 异常处理一般由三个部分组成：
 
-
 1.  在内核堆栈中保存大多数寄存器的内容（汇编）。
 2.  用高级的C函数处理异常。
 3.  通过`ret_from_exception()`函数从异常处理程序退出。
@@ -89,6 +88,16 @@ Linux中中断处理程序是无须重入的。当一条中断线上的handler�
 在所有处理器上都会被屏蔽掉。
 
 在/proc/interrupts中可以查看当前系统的中断统计信息。
+
+
+### IRQ数据结构
+
+每个IRQ都有自己的描述符`irq_desc_t`，描述符中有字段指向PIC对象，有字段指向ISR的
+链表（因为每个IRQ线上可以注册多个中断处理程序）。所有的`irq_desc_t`合起来组成
+`irq_desc`数组。示例图如下：
+
+![](pictures/understanding_linux_step_by_step_interrupt_irq_descriptors.png)
+
 
 ### 上半部和下半部的概念
 
